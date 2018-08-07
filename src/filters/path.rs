@@ -143,7 +143,7 @@ use ::reject::{self, Rejection};
 /// # Panics
 ///
 /// Exact path filters cannot be empty, or contain slashes.
-pub fn path(p: &'static str) -> impl Filter<Extract=(), Error=Rejection> + Copy {
+pub fn path(p: &str) -> impl Filter<Extract=(), Error=Rejection> + Copy {
     assert!(!p.is_empty(), "exact path segments should not be empty");
     assert!(!p.contains('/'), "exact path segments should not contain a slash: {:?}", p);
 
